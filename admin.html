@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel - Order Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Details</th>
+                <th>Order Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>
+                    <p><strong>Name:</strong> {{ order.Name }}</p>
+                    <p><strong>Number:</strong> {{ order.Number }}</p>
+                    <p><strong>Address:</strong> {{ order.Address }}</p>
+                    <p><strong>Building:</strong> {{ order.Building }}</p>
+                    <p><strong>Flat Number:</strong> {{ order.FlatNumber }}</p>
+                </td>
+                <td>
+                    {% for item in order.Order %}
+                        <p><strong>{{ item.name }}</strong> - {{ item.quantity }}</p>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

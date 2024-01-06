@@ -1,0 +1,3 @@
+Name,Number,Address,Building,FlatNumber,Order
+sagar,7776897632,40fit,shiv malhar,401,"[{'name': 'Water Bottle', 'quantity': '3'}]"
+sagar,7776897632,40fit,shiv malhar,401,"[{'name': 'Full Rice Plate', 'quantity': '1', 'subji': 'matar'}, {'name': 'Half Rice Plate', 'quantity': '1', 'subji': 'bengan'}, {'name': 'Chapati', 'quantity': '1', 'customization': 'without-oil'}, {'name': 'Water Bottle', 'quantity': '4'}]"

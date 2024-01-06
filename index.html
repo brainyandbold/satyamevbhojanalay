@@ -1,0 +1,126 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>My Bhojanalay</title>
+</head>
+<body>
+    <h1>Welcome to Satyamev Bhojanalay</h1>
+
+    <div class="gallery" id="gallery">
+        <!-- Gallery items with images included directly -->
+        
+
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(../static/images/2.png)"></div>
+            <h2>Full Rice Plate</h2>
+            <h3>Rs.80</h3>
+            <h5 id="full-rice-plate-selected"></h5>
+            <p>One Subji + 3 Chapati + Salad/Papad</p>
+           <div class="quantity-input" id="full-rice-plate">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('full-rice-plate')">-</button>
+                <input type="text" name="full Rice Plate-quantity" id="full-rice-plate-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('full-rice-plate')">+</button>
+            </div>
+            <div class="subji-select" id="full-rice-plate-select">
+                <button class="full-add-btn" onclick="costumizeSelect('full-rice-plate')">Add</button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(../static/images/1.png)"></div>
+           
+            <h2>Half Rice Plate</h2>
+            <h3>Rs.60</h3>
+            <h5 id="half-rice-plate-selected"></h5>
+            <p>One Subji + 3 Chapati + Dal-Rice + Salad/Papad</p>
+            <div class="quantity-input" id="half-rice-plate">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('half-rice-plate')">-</button>
+                <input type="text" name="Half Rice Plate-quantity" id="half-rice-plate-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('half-rice-plate')">+</button>
+            </div>
+            <div class="subji-select" id="half-rice-plate-select">
+                <button class="half-add-btn" onclick="costumizeSelect('half-rice-plate')">Add</button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(../static/images/3.png)"></div>
+            <h2>Chapati / Roti</h2>
+            <h3>Rs. 10</h3>
+            <h5 id="chapati-selected"></h5>
+            <p>Nutritious whole wheat chapati</p>
+            <div class="quantity-input" id="chapati">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('chapati')">-</button>
+                <input type="text" name="chapati-quantity" id="chapati-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('chapati')">+</button>
+            </div>
+            <div class="subji-select" id="chapati-select">
+                <button class="full-add-btn" onclick="costumizeSelect('chapati')">Add</button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(../static/images/4.png)"></div>
+            <h3>Water Bottle</h3>
+            <p>500ml water bottle</p>
+            <div class="quantity-input" id="bottle">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('bottle')">-</button>
+                <input type="text" name="Water Bottle-quantity" id="bottle-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('bottle')">+</button>
+            </div>
+            <div class="subji-select" id="bottle-select">
+                <button class="full-add-btn" onclick="costumizeSelect('bottle')">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <form id="orderForm">
+        <button type="button" onclick="placeOrder()">Place Order</button>
+    </form>
+    <div id="customizationModal" class="modal">
+        
+    </div>
+    <!-- Add this HTML for the confirmation modal -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cancelOrder()">&times;</span>
+        <h2>Confirm Your Order</h2>
+        <div id="modalContent"></div>
+        
+    </div>
+</div>
+<div id="initialFormModal" class="modal">
+    <div class="modal-content">
+        <h2>Welcome to Satyamev Bhojanalay!</h2>
+        <form id="initialForm">
+            <label for="initialName">Name:</label>
+            <input type="text" id="initialName" required>
+            <br>
+            <label for="initialNumber">Mobile Number:</label>
+            <input type="text" id="initialNumber" required>
+<br>
+            <label for="initialAddress">Address:</label>
+            <input type="text" id="initialAddress" required>
+            <br>
+                        <label for="initialBuilding">Building Name:</label>
+                        <input type="text" id="initialBuilding" required>
+<br>
+            <label for="initialFlat">Flat Number:</label>
+            <input type="text" id="initialFlat" required>
+<br>
+            <button type="button" onclick="saveInitialDetails()">Save</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+<!-- <script defer src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+<script src="../static/js/app.js"></script>
+</html>
